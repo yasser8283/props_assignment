@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MapPin } from 'lucide-react'
 const Card = (prop) => {
+    const [initial, setinitial] = useState("Reserve")
     const handleReserve = () =>{
-        alert("Reserved!");
+        initial === "Reserve" ? setinitial("Reserved") : setinitial("Reserve")
     }
     return (
         <div className='card-parent'>
@@ -26,7 +27,7 @@ const Card = (prop) => {
                 </div>
                 <div className="bottom">
 
-                    <button className="reserve-btn" onClick={handleReserve}>Reserve</button>
+                    <button className="reserve-btn" onClick={handleReserve}>{initial}</button>
                 </div>
             </div>
         </div>
